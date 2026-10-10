@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: smart-campus-analytics
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: AUTH_ADMIN_SIGNUP_CODE
+        generateValue: true
